@@ -1,6 +1,6 @@
 import { api, APIError } from "encore.dev/api";
 import { randomBytes } from "node:crypto";
-import { client, db, sql } from "./drizzle/client";
+import { db, sql } from "./drizzle/client";
 import schema from "./drizzle/schema";
 import { eq } from "drizzle-orm";
 import log from "encore.dev/log";
@@ -21,14 +21,6 @@ export const shorten = api(
     const id = randomBytes(6).toString("base64url");
     await db.insert(schema.url).values([{ id, url }]);
     return { id, url };
-  }
-);
-
-export const test = api(
-  { expose: true, auth: false, method: "GET", path: "/test" },
-  async (): Promise<{ url: string }> => {
-    await db.select().from(schema.url);
-    return { url: sql.connectionString };
   }
 );
 
