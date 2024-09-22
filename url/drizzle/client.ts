@@ -7,20 +7,20 @@ import "dotenv/config";
 import { secret } from "encore.dev/config";
 
 const env = secret("DB_ENV")();
-console.log({ env });
+import log from "encore.dev/log";
 
 const sql = new SQLDatabase("url", {
   migrations: "./migrations",
 });
 
 const loadProd = () => {
-  console.log(sql.connectionString);
+  log.info(sql.connectionString);
   const client = neon(sql.connectionString);
   return prodDrizzle(client);
 };
 
 const loadDev = () => {
-  console.log(sql.connectionString);
+  log.info(sql.connectionString);
   const client = postgres(sql.connectionString);
   return devDrizzle(client);
 };
