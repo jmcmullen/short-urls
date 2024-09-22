@@ -20,15 +20,9 @@ importers:
       encore.dev:
         specifier: ^1.41.4
         version: 1.41.4
-      pg:
-        specifier: ^8.12.0
-        version: 8.13.0
       postgres:
         specifier: ^3.4.4
         version: 3.4.4
-      ws:
-        specifier: ^8.18.0
-        version: 8.18.0
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu':
         specifier: ^4.22.4
@@ -37,9 +31,6 @@ importers:
       '@types/node':
         specifier: ^20.16.5
         version: 20.16.5
-      '@types/pg':
-        specifier: ^8.11.10
-        version: 8.11.10
       drizzle-kit:
         specifier: ^0.24.2
         version: 0.24.2
@@ -1109,18 +1100,6 @@ packages:
     engines: {node: '>=8'}
     hasBin: true
 
-  ws@8.18.0:
-    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
-    engines: {node: '>=10.0.0'}
-    peerDependencies:
-      bufferutil: ^4.0.1
-      utf-8-validate: '>=5.0.2'
-    peerDependenciesMeta:
-      bufferutil:
-        optional: true
-      utf-8-validate:
-        optional: true
-
   xtend@4.0.2:
     resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==}
     engines: {node: '>=0.4'}
@@ -1420,6 +1399,7 @@ snapshots:
       '@types/node': 20.16.5
       pg-protocol: 1.7.0
       pg-types: 4.0.2
+    optional: true
 
   '@types/pg@8.11.6':
     dependencies:
@@ -1694,7 +1674,8 @@ snapshots:
   pg-cloudflare@1.1.1:
     optional: true
 
-  pg-connection-string@2.7.0: {}
+  pg-connection-string@2.7.0:
+    optional: true
 
   pg-int8@1.0.1: {}
 
@@ -1703,6 +1684,7 @@ snapshots:
   pg-pool@3.7.0(pg@8.13.0):
     dependencies:
       pg: 8.13.0
+    optional: true
 
   pg-protocol@1.7.0: {}
 
@@ -1713,6 +1695,7 @@ snapshots:
       postgres-bytea: 1.0.0
       postgres-date: 1.0.7
       postgres-interval: 1.2.0
+    optional: true
 
   pg-types@4.0.2:
     dependencies:
@@ -1733,10 +1716,12 @@ snapshots:
       pgpass: 1.0.5
     optionalDependencies:
       pg-cloudflare: 1.1.1
+    optional: true
 
   pgpass@1.0.5:
     dependencies:
       split2: 4.2.0
+    optional: true
 
   picocolors@1.1.0: {}
 
@@ -1752,23 +1737,27 @@ snapshots:
       picocolors: 1.1.0
       source-map-js: 1.2.1
 
-  postgres-array@2.0.0: {}
+  postgres-array@2.0.0:
+    optional: true
 
   postgres-array@3.0.2: {}
 
-  postgres-bytea@1.0.0: {}
+  postgres-bytea@1.0.0:
+    optional: true
 
   postgres-bytea@3.0.0:
     dependencies:
       obuf: 1.1.2
 
-  postgres-date@1.0.7: {}
+  postgres-date@1.0.7:
+    optional: true
 
   postgres-date@2.1.0: {}
 
   postgres-interval@1.2.0:
     dependencies:
       xtend: 4.0.2
+    optional: true
 
   postgres-interval@3.0.0: {}
 
@@ -1827,7 +1816,8 @@ snapshots:
 
   source-map@0.6.1: {}
 
-  split2@4.2.0: {}
+  split2@4.2.0:
+    optional: true
 
   stackback@0.0.2: {}
 
@@ -1923,8 +1913,7 @@ snapshots:
       siginfo: 2.0.0
       stackback: 0.0.2
 
-  ws@8.18.0: {}
-
-  xtend@4.0.2: {}
+  xtend@4.0.2:
+    optional: true
 
   yocto-queue@1.1.1: {}

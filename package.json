@@ -11,7 +11,6 @@
   },
   "devDependencies": {
     "@types/node": "^20.16.5",
-    "@types/pg": "^8.11.10",
     "drizzle-kit": "^0.24.2",
     "typescript": "^5.6.2",
     "vite": "^5.4.7",
@@ -22,9 +21,7 @@
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.33.0",
     "encore.dev": "^1.41.4",
-    "pg": "^8.12.0",
-    "postgres": "^3.4.4",
-    "ws": "^8.18.0"
+    "postgres": "^3.4.4"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.22.4"
