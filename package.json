@@ -6,16 +6,22 @@
   "license": "MPL-2.0",
   "type": "module",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "generate": "drizzle-kit generate --config=./url/drizzle/config.ts",
+    "migrate": "drizzle-kit migrate --config=./url/drizzle/config.ts"
   },
   "devDependencies": {
     "@types/node": "^20.5.7",
+    "drizzle-kit": "^0.24.2",
     "typescript": "^5.2.2",
     "vite": "^5.4.7",
     "vitest": "^1.2.2"
   },
   "dependencies": {
-    "encore.dev": "^1.41.4"
+    "@neondatabase/serverless": "^0.9.5",
+    "drizzle-orm": "^0.33.0",
+    "encore.dev": "^1.41.4",
+    "postgres": "^3.4.4"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "^4.13.0"
