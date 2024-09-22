@@ -23,6 +23,9 @@ importers:
       postgres:
         specifier: ^3.4.4
         version: 3.4.4
+      ws:
+        specifier: ^8.18.0
+        version: 8.18.0
     optionalDependencies:
       '@rollup/rollup-linux-x64-gnu':
         specifier: ^4.22.4
@@ -31,6 +34,9 @@ importers:
       '@types/node':
         specifier: ^20.16.5
         version: 20.16.5
+      '@types/ws':
+        specifier: ^8.5.12
+        version: 8.5.12
       drizzle-kit:
         specifier: ^0.24.2
         version: 0.24.2
@@ -568,6 +574,9 @@ packages:
   '@types/pg@8.11.6':
     resolution: {integrity: sha512-/2WmmBXHLsfRqzfHW7BNZ8SbYzE8OSk7i3WjFYvfgRHj7S1xj+16Je5fUKv3lVdVzk/zn9TXOqf+avFCFIE0yQ==}
 
+  '@types/ws@8.5.12':
+    resolution: {integrity: sha512-3tPRkv1EtkDpzlgyKyI8pGsGZAGPEaXeu0DOj5DI25Ja91bdAYddYHbADRYVrZMRbfW+1l5YwXVDKohDJNQxkQ==}
+
   '@vitest/expect@1.6.0':
     resolution: {integrity: sha512-ixEvFVQjycy/oNgHjqsL6AZCDduC+tflRluaHIzKIsdbzkLn2U/iBnVeJwB6HsIjQBdfMR8Z0tRxKUsvFJEeWQ==}
 
@@ -1050,6 +1059,18 @@ packages:
     engines: {node: '>=8'}
     hasBin: true
 
+  ws@8.18.0:
+    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
+    engines: {node: '>=10.0.0'}
+    peerDependencies:
+      bufferutil: ^4.0.1
+      utf-8-validate: '>=5.0.2'
+    peerDependenciesMeta:
+      bufferutil:
+        optional: true
+      utf-8-validate:
+        optional: true
+
   yocto-queue@1.1.1:
     resolution: {integrity: sha512-b4JR1PFR10y1mKjhHY9LaGo6tmrgjit7hxVIeAmyMw3jegXR4dhYqLaQF5zMXZxY7tLpMyJeLjr1C4rLmkVe8g==}
     engines: {node: '>=12.20'}
@@ -1345,6 +1366,10 @@ snapshots:
       '@types/node': 20.16.5
       pg-protocol: 1.7.0
       pg-types: 4.0.2
+
+  '@types/ws@8.5.12':
+    dependencies:
+      '@types/node': 20.16.5
 
   '@vitest/expect@1.6.0':
     dependencies:
@@ -1797,5 +1822,7 @@ snapshots:
     dependencies:
       siginfo: 2.0.0
       stackback: 0.0.2
+
+  ws@8.18.0: {}
 
   yocto-queue@1.1.1: {}
