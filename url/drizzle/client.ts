@@ -1,11 +1,8 @@
 import { drizzle } from "drizzle-orm/neon-http";
 import { neon } from "@neondatabase/serverless";
 import { SQLDatabase } from "encore.dev/storage/sqldb";
-import { secret } from "encore.dev/config";
 import log from "encore.dev/log";
 import "dotenv/config";
-import postgres from "postgres";
-import { env } from "process";
 
 const sql = new SQLDatabase("url", {
   migrations: "./migrations",
