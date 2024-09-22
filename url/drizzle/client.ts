@@ -4,7 +4,7 @@ import { SQLDatabase } from "encore.dev/storage/sqldb";
 import log from "encore.dev/log";
 import "dotenv/config";
 
-const sql = new SQLDatabase("url", {
+export const sql = new SQLDatabase("url", {
   migrations: "./migrations",
 });
 
