@@ -4,6 +4,9 @@ import { neon } from "@neondatabase/serverless";
 import postgres from "postgres";
 import { SQLDatabase } from "encore.dev/storage/sqldb";
 import "dotenv/config";
+import { secret } from "encore.dev/config";
+
+const env = secret("DB_ENV")();
 
 const sql = new SQLDatabase("url", {
   migrations: "./migrations",
@@ -19,5 +22,4 @@ const loadDev = () => {
   return devDrizzle(client);
 };
 
-export const db =
-  process.env.NODE_ENV === "development" ? loadDev() : loadProd();
+export const db = env === "local" ? loadDev() : loadProd();
