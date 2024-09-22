@@ -1,14 +1,23 @@
-import { drizzle } from "drizzle-orm/postgres-js";
-import { migrate } from "drizzle-orm/postgres-js/migrator";
+import { drizzle as devDrizzle } from "drizzle-orm/postgres-js";
+import { drizzle as prodDrizzle } from "drizzle-orm/neon-http";
+import { neon } from "@neondatabase/serverless";
 import postgres from "postgres";
 import { SQLDatabase } from "encore.dev/storage/sqldb";
-import { DRIZZLE_BASE_PATH } from "./config";
+import "dotenv/config";
 
-const sqlDb = new SQLDatabase("url");
-const client = postgres(sqlDb.connectionString);
-
-export const db = drizzle(client);
-
-await migrate(db, {
-  migrationsFolder: `${DRIZZLE_BASE_PATH}/migrations`,
+const sql = new SQLDatabase("url", {
+  migrations: "./migrations",
 });
+
+const loadProd = () => {
+  const client = neon(sql.connectionString);
+  return prodDrizzle(client);
+};
+
+const loadDev = () => {
+  const client = postgres(sql.connectionString);
+  return devDrizzle(client);
+};
+
+export const db =
+  process.env.NODE_ENV === "development" ? loadDev() : loadProd();

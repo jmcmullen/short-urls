@@ -7,8 +7,8 @@
   "type": "module",
   "scripts": {
     "test": "vitest",
-    "generate": "drizzle-kit generate --config=./url/drizzle/config.ts",
-    "migrate": "drizzle-kit migrate --config=./url/drizzle/config.ts"
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
   },
   "devDependencies": {
     "@types/node": "^20.5.7",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@neondatabase/serverless": "^0.9.5",
+    "dotenv": "^16.4.5",
     "drizzle-orm": "^0.33.0",
     "encore.dev": "^1.41.4",
     "postgres": "^3.4.4"
