@@ -14,13 +14,13 @@ const sql = new SQLDatabase("url", {
 });
 
 const loadProd = () => {
-  log.info(sql.connectionString);
+  log.info("prod connectionString", sql.connectionString);
   const client = neon(sql.connectionString);
   return prodDrizzle(client);
 };
 
 const loadDev = () => {
-  log.info(sql.connectionString);
+  log.info("dev connectionString", sql.connectionString);
   const client = postgres(sql.connectionString);
   return devDrizzle(client);
 };
